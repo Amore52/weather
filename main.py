@@ -4,17 +4,17 @@ import requests
 def retrieve_for_city(city, unit):
     params = {
         'lang': 'ru',
-        '?n': '',
-        '?q': '',
-        '?T': ''
+        'n': '',
+        'q': '',
+        'T': ''
     }
 
     if unit == 'u':
-        params['?u'] = ''
+        params['u'] = ''
     elif unit == 'm':
-        params['?m'] = ''
+        params['m'] = ''
     elif unit == 'M':
-        params['?M'] = ''
+        params['M'] = ''
 
 
     url = f"https://wttr.in/{city}"
