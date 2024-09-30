@@ -1,5 +1,6 @@
 import requests
 
+VALID_UNITS = {'u', 'm', 'M'}
 
 def retrieve_for_city(city, unit):
     params = {
@@ -9,18 +10,15 @@ def retrieve_for_city(city, unit):
         'T': ''
     }
 
-    if unit == 'u':
-        params['u'] = ''
-    elif unit == 'm':
-        params['m'] = ''
-    elif unit == 'M':
-        params['M'] = ''
-
+    if unit in VALID_UNITS:
+        params[unit] = ''
 
     url = f"https://wttr.in/{city}"
     response = requests.get(url, params=params)
     response.raise_for_status()
+    print(response.url)
     return response.text
+
 
 
 city = input("Введите город или код аэропорта: ")
