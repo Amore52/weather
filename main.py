@@ -12,14 +12,12 @@ def retrieve_for_city(city, unit):
 
     if unit in VALID_UNITS:
         params[unit] = ''
-
-    url = f"https://wttr.in/{city}"
-    response = requests.get(url, params=params)
-    response.raise_for_status()
-    print(response.url)
-    return response.text
-
-
+        url = f"https://wttr.in/{city}"
+        response = requests.get(url, params=params)
+        response.raise_for_status()
+        return response.text
+    else:
+        return ('Некорректный ввод')
 
 city = input("Введите город или код аэропорта: ")
 unit = input("Введите единицу измерения (u, m, M): ")
