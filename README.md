@@ -18,7 +18,7 @@ git clone https://github.com/Amore52/weather.git
 pip install requests 
 ``` 
 
-Использование 
+## Использование 
 
 Запустите скрипт и следуйте инструкциям: 
 ``` 
